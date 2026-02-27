@@ -20,7 +20,26 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <SEO title={title} description={description} />
+    <SEO
+      title={title}
+      description={description}
+      openGraph={{
+        basic: {
+          title: title,
+          type: 'website',
+          image: '',
+        },
+        optional: {
+          description: description,
+          siteName: 'Central Ohio Windows',
+        },
+      }}
+      twitter={{
+        card: 'summary',
+        title: title,
+        description: description,
+      }}
+    />
   </head>
   <body>
     <slot />

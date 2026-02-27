@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://centralohiowindows.com',
+  output: 'static',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
