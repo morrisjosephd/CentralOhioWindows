@@ -117,6 +117,30 @@ const { city } = Astro.props;
     <!-- FAQ -->
     <FAQ items={city.faq} heading={`${city.name} Window Replacement FAQ`} />
 
+    <!-- Related Links -->
+    <div class="max-w-4xl mx-auto px-4 py-12">
+      <section>
+        <h2 class="text-2xl font-bold mb-6">Related Resources</h2>
+        <ul class="space-y-3">
+          <li>
+            <a href="/replacement-window-cost" class="link link-primary text-lg">
+              Replacement Window Cost Guide &rarr;
+            </a>
+          </li>
+          <li>
+            <a href="/window-types" class="link link-primary text-lg">
+              Types of Replacement Windows &rarr;
+            </a>
+          </li>
+          <li>
+            <a href="/free-quote" class="link link-primary text-lg">
+              Get a Free Quote &rarr;
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
     <!-- Bottom CTA -->
     <CTABlock
       heading={`Ready to Replace Your Windows in ${city.name}?`}
