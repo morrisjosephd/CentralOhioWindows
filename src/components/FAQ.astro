@@ -1,0 +1,25 @@
+---
+interface Props {
+  items: { question: string; answer: string }[];
+  heading?: string;
+}
+
+const { items, heading = 'Frequently Asked Questions' } = Astro.props;
+---
+
+<section class="py-16">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">{heading}</h2>
+    <div class="join join-vertical w-full">
+      {items.map((item, i) => (
+        <div class="collapse collapse-arrow join-item border border-base-300">
+          <input type="radio" name="faq-accordion" checked={i === 0} />
+          <div class="collapse-title font-semibold">{item.question}</div>
+          <div class="collapse-content text-sm">
+            <p>{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
