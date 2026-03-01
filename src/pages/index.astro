@@ -1,13 +1,175 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import CTABlock from '../components/CTABlock.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faqItems = [
+  { question: "How does Central Ohio Windows work?", answer: "Simply fill out our quick form with your project details. We'll match you with one trusted, vetted local window contractor who will provide a free, no-obligation quote." },
+  { question: "Is this really free?", answer: "Yes, 100% free for homeowners. The contractor pays a fee to receive your project details — you never pay us anything." },
+  { question: "How many contractors will contact me?", answer: "Just one. Unlike other sites that sell your info to 3-5 companies, we match you with a single trusted contractor. No flood of sales calls." },
+  { question: "What areas do you serve?", answer: "We serve the entire Central Ohio region including Columbus, Dublin, Westerville, Worthington, Powell, Hilliard, Grove City, Pickerington, Reynoldsburg, Delaware, Newark, Lancaster, Springfield, and Mansfield." },
+  { question: "How do you choose which contractor to match me with?", answer: "We consider your location, project scope, and timeline to match you with the most qualified contractor in our network for your specific needs." },
+];
+
+const serviceAreas = [
+  { name: "Columbus", slug: "columbus" },
+  { name: "Westerville", slug: "westerville" },
+  { name: "Dublin", slug: "dublin" },
+  { name: "Hilliard", slug: "hilliard" },
+  { name: "Grove City", slug: "grove-city" },
+  { name: "Worthington", slug: "worthington" },
+  { name: "Powell", slug: "powell" },
+  { name: "Pickerington", slug: "pickerington" },
+  { name: "Reynoldsburg", slug: "reynoldsburg" },
+  { name: "Delaware", slug: "delaware" },
+  { name: "Newark", slug: "newark" },
+  { name: "Lancaster", slug: "lancaster" },
+  { name: "Springfield", slug: "springfield" },
+  { name: "Mansfield", slug: "mansfield" },
+];
+
+const popularResources = [
+  { title: "Replacement Window Costs", href: "/replacement-window-cost", description: "Learn what new windows cost in Central Ohio and how to budget for your project." },
+  { title: "Types of Windows", href: "/window-types", description: "Explore different window styles and find the best fit for your home." },
+  { title: "Signs You Need New Windows", href: "/signs-you-need-new-windows", description: "Discover the warning signs that it's time to replace your windows." },
+  { title: "Energy-Efficient Windows", href: "/energy-efficient-windows", description: "Find out how energy-efficient windows can lower your utility bills." },
+];
 ---
 
-<BaseLayout title="Central Ohio Windows" description="Quality window replacement and installation in Central Ohio. Get a free quote today.">
-  <main class="min-h-screen flex items-center justify-center">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold mb-4">Central Ohio Windows</h1>
-      <p class="text-lg mb-6">Quality window replacement and installation.</p>
-      <button class="btn btn-primary">Get a Free Quote</button>
-    </div>
+<BaseLayout
+  title="Central Ohio Windows | Find Trusted Window Replacement Pros"
+  description="Get a free, no-obligation quote from a vetted local window contractor in Central Ohio. One contractor. One quote. Zero pressure."
+>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero min-h-[70vh] bg-gradient-to-br from-brand-blue to-brand-blue-dark">
+      <div class="hero-content text-center text-white py-20">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Find a Trusted Window Replacement Pro in Central Ohio
+          </h1>
+          <p class="text-lg md:text-xl mb-8 opacity-90">
+            Get a free, no-obligation quote from one vetted local contractor. No pressure, no spam.
+          </p>
+          <a href="/free-quote" class="btn btn-lg bg-white text-primary hover:bg-gray-100">
+            Get My Free Quote
+          </a>
+          <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <span class="badge badge-lg bg-white/20 text-white border-white/30 py-3 px-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              Free Estimates
+            </span>
+            <span class="badge badge-lg bg-white/20 text-white border-white/30 py-3 px-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              No Obligation
+            </span>
+            <span class="badge badge-lg bg-white/20 text-white border-white/30 py-3 px-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              One Trusted Contractor
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <HowItWorks />
+
+    <!-- Why Homeowners Trust Us -->
+    <section class="bg-base-200 py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Why Homeowners Trust Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="card bg-base-100 shadow-md">
+            <div class="card-body items-center text-center">
+              <div class="text-primary mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <h3 class="card-title">One Contractor, Not Five</h3>
+              <p class="text-base-content/70">Unlike other sites that flood you with calls from multiple companies, we connect you with just one trusted local pro.</p>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-md">
+            <div class="card-body items-center text-center">
+              <div class="text-primary mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
+              <h3 class="card-title">Your Info Stays Private</h3>
+              <p class="text-base-content/70">We never share your information without your permission. Your privacy is our priority.</p>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-md">
+            <div class="card-body items-center text-center">
+              <div class="text-primary mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="card-title">100% Free for Homeowners</h3>
+              <p class="text-base-content/70">Our service is completely free for you. The contractor pays us — you never pay a dime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section id="service-areas" class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Serving All of Central Ohio</h2>
+        <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
+          We connect homeowners across the Central Ohio region with trusted window replacement contractors.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {serviceAreas.map((area) => (
+            <a
+              href={`/${area.slug}-ohio-windows`}
+              class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md hover:border-primary transition-all"
+            >
+              <div class="card-body items-center text-center p-4">
+                <span class="font-semibold text-base-content">{area.name}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Resources -->
+    <section class="bg-base-200 py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Popular Resources</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {popularResources.map((resource) => (
+            <a href={resource.href} class="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
+              <div class="card-body">
+                <h3 class="card-title text-lg">{resource.title}</h3>
+                <p class="text-base-content/70 text-sm">{resource.description}</p>
+                <div class="card-actions justify-end mt-2">
+                  <span class="text-primary text-sm font-semibold">Read More &rarr;</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Block -->
+    <CTABlock />
+
+    <!-- FAQ -->
+    <FAQ items={faqItems} />
   </main>
 </BaseLayout>

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABlock from '../components/CTABlock.astro';
+---
+
+<BaseLayout
+  title="About Central Ohio Windows | Your Window Replacement Resource"
+  description="Central Ohio Windows is a free resource connecting homeowners with trusted local window contractors. Learn about our mission and how we work."
+>
+  <main class="py-12">
+    <div class="max-w-4xl mx-auto px-4">
+
+      <!-- Intro -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">About Central Ohio Windows</h1>
+
+      <!-- Our Mission -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+        <p class="text-lg text-base-content/80">
+          We help Central Ohio homeowners find trusted window replacement contractors — for
+          free. No pressure, no spam, no hassle.
+        </p>
+      </section>
+
+      <!-- Why We Built This -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6">Why We Built This</h2>
+        <p class="text-base-content/80">
+          After seeing how overwhelming it can be to find a reliable window contractor, we
+          created Central Ohio Windows as a free resource to simplify the process. Too many
+          homeowners get bombarded with sales calls after requesting a single quote. We
+          believe there's a better way.
+        </p>
+      </section>
+
+      <!-- How It Works -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6">How It Works</h2>
+        <ul class="list-disc list-inside space-y-3 text-base-content/80">
+          <li>You tell us about your project</li>
+          <li>We match you with <strong>one</strong> vetted local contractor</li>
+          <li>You get a free, no-obligation quote</li>
+          <li>You decide — zero pressure</li>
+        </ul>
+      </section>
+
+      <!-- Our Promise -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6">Our Promise</h2>
+        <ul class="space-y-4 text-base-content/80">
+          <li>
+            <strong>One contractor, not five</strong> — We'll never flood you with calls from
+            multiple companies.
+          </li>
+          <li>
+            <strong>Your privacy matters</strong> — We only share your info with the one
+            contractor we match you with.
+          </li>
+          <li>
+            <strong>Always free</strong> — Our service is 100% free for homeowners. Always.
+          </li>
+          <li>
+            <strong>No pressure</strong> — Get your quote and decide on your own terms.
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- CTA Block -->
+    <CTABlock />
+
+    <!-- Related Links -->
+    <div class="max-w-4xl mx-auto px-4 py-12">
+      <section>
+        <h2 class="text-2xl font-bold mb-6">Learn More</h2>
+        <ul class="space-y-3">
+          <li>
+            <a href="/how-window-replacement-works" class="link link-primary text-lg">
+              How Window Replacement Works &rarr;
+            </a>
+          </li>
+          <li>
+            <a href="/free-quote" class="link link-primary text-lg">
+              Get a Free Quote &rarr;
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

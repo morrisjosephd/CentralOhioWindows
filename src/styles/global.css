@@ -1,2 +1,10 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+@theme {
+  --color-brand-blue: #1e40af;
+  --color-brand-blue-light: #3b82f6;
+  --color-brand-blue-dark: #1e3a8a;
+}

@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABlock from '../components/CTABlock.astro';
+import FAQ from '../components/FAQ.astro';
+import { cities } from '../data/cities';
+import type { City } from '../data/cities';
+
+export function getStaticPaths() {
+  return cities.map((city) => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+interface Props {
+  city: City;
+}
+
+const { city } = Astro.props;
+---
+
+<BaseLayout
+  title={`Window Replacement in ${city.name}, OH | Free Quote | Central Ohio Windows`}
+  description={`Looking for window replacement in ${city.name}, Ohio? Get a free, no-obligation quote from a trusted local contractor. No pressure, no spam.`}
+>
+  <main>
+    <!-- Hero / Intro -->
+    <section class="bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white py-16">
+      <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Window Replacement in {city.name}, Ohio
+        </h1>
+        <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+          {city.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- Top CTA -->
+    <CTABlock heading={`Get Your Free Quote in ${city.name}`} />
+
+    <!-- Cost Section -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6">
+          How Much Do Replacement Windows Cost in {city.name}?
+        </h2>
+        <p class="text-base-content/80 mb-4 leading-relaxed">
+          The cost of replacement windows in {city.name} depends on several factors,
+          including the window style, frame material, glass package, and the number of
+          windows being replaced. On average, homeowners in {city.name} pay between
+          <strong>$300 and $800 per window</strong> installed.
+        </p>
+        <p class="text-base-content/80 mb-6 leading-relaxed">
+          For a whole-house window replacement project, most {city.name} homeowners
+          spend between <strong>$8,000 and $15,000</strong> total. The best way to get
+          an accurate price for your home is to request a free, no-obligation quote
+          from a trusted local contractor.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full">
+            <thead>
+              <tr>
+                <th>Project Scope</th>
+                <th>Typical Cost Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Single window</td>
+                <td>$300 - $800</td>
+              </tr>
+              <tr>
+                <td>5-10 windows</td>
+                <td>$1,500 - $8,000</td>
+              </tr>
+              <tr>
+                <td>Whole house (15-25 windows)</td>
+                <td>$8,000 - $15,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Area Highlights -->
+    <section class="bg-base-200 py-16">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6">
+          Window Replacement for {city.name} Homes
+        </h2>
+        <ul class="space-y-4">
+          {city.highlights.map((highlight) => (
+            <li class="flex items-start gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-primary flex-shrink-0 mt-0.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-base-content/80 leading-relaxed">{highlight}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <FAQ items={city.faq} heading={`${city.name} Window Replacement FAQ`} />
+
+    <!-- Related Links -->
+    <div class="max-w-4xl mx-auto px-4 py-12">
+      <section>
+        <h2 class="text-2xl font-bold mb-6">Related Resources</h2>
+        <ul class="space-y-3">
+          <li>
+            <a href="/replacement-window-cost" class="link link-primary text-lg">
+              Replacement Window Cost Guide &rarr;
+            </a>
+          </li>
+          <li>
+            <a href="/window-types" class="link link-primary text-lg">
+              Types of Replacement Windows &rarr;
+            </a>
+          </li>
+          <li>
+            <a href="/free-quote" class="link link-primary text-lg">
+              Get a Free Quote &rarr;
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Bottom CTA -->
+    <CTABlock
+      heading={`Ready to Replace Your Windows in ${city.name}?`}
+      description={`Get a free, no-obligation quote from a trusted ${city.name} window contractor. One call, one quote, zero pressure.`}
+    />
+  </main>
+</BaseLayout>
